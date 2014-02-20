@@ -1,0 +1,111 @@
+<header class="bar-title">
+  <a class="button" href="#menu">
+    Menu
+  </a>
+  <h1 class="title">Finciero</h1>
+  <a class="button" href="#budgets">
+    Presupuesto
+  </a>
+</header>
+
+<div class="slider" style="margin-top:40px;height:300px !important">
+  <ul>
+    <li>
+      <script type="text/javascript">
+      $(document).ready(function(){
+          $('.chartsExpenses').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            credits: {
+              enabled: false
+            },
+            title: {
+                text: 'Gastos del mes'
+            },
+            tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Firefox',   45.0],
+                    ['IE',       26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Safari',    8.5],
+                    ['Opera',     6.2],
+                    ['Others',   0.7]
+                ]
+            }]
+        });
+    });
+    </script>
+      <div class="chartsExpenses" style="min-width: 320px; height: 300px; margin: 0 auto">hola aqui hay texto</div>
+    </li>
+    <li>
+      <img src="http://maker.github.io/ratchet/img/slide-1.jpg">
+    </li>
+    <li>
+      <img src="http://maker.github.io/ratchet/img/slide-3.jpg">
+    </li>
+  </ul>
+</div>
+<style>
+  .balances{
+    width: 100%;
+    margin-left: 8px;
+    margin-right:auto;
+  }
+  .btn {
+    width: 95%;
+    height: 40px;
+    margin-top:10px;
+    border: 1px solid #7f8c8d;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #7f8c8d;
+    text-align: left;
+  }
+  .btn-positive {
+    background-color: #27ae60;
+    color: #ecf0f1;
+  }
+  .btn-negative {
+    background-color: #c0392b;
+    color: #ecf0f1;
+  }
+  .cash {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.2);
+    box-shadow: inset 0px 0px 5px #7f8c8d;
+    float:right;
+  }
+</style>
+<hr>
+<div class="balances">
+  <button class="btn btn-positive">Efectivo: <span class="cash">$1000000</span></button><br/>
+  <button class="btn btn-negative">Deuda: <span class="cash">$0</span></button><br/>
+</div>
+<hr>
